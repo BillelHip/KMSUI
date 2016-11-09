@@ -8,8 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    
+    <link rel="icon" href="../img/pusat-asuhan-tunas-islam.png">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>KMS Login</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">

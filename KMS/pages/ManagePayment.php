@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    
+    <link rel="icon" href="../img/pusat-asuhan-tunas-islam.png">
 
     <title>Kindergarten PASTI</title>
 
