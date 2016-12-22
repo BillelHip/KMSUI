@@ -48,3 +48,9 @@ Temporary Items
 
 # python compile
 *.pyc
+
+#pycharm
+.idea/
+
+# dreamweaver
+_notes/
