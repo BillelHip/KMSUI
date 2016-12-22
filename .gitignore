@@ -46,8 +46,9 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# python compile
+# python compile & instance
 *.pyc
+instance/
 
 #pycharm
 .idea/

@@ -1,0 +1,5 @@
+
+DEBUG = True
+
+BCRYPT_LEVEL = 12
+

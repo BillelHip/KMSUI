@@ -2,7 +2,11 @@ from flask import Flask, redirect, url_for, render_template, request, jsonify
 
 import json
 
-app = Flask(__name__, static_folder='./KMS', template_folder='./KMS/templates', static_url_path='')
+app = Flask(__name__, static_folder='./KMS', template_folder='./KMS/templates',
+            static_url_path='', instance_relative_config=True)
+app.config.from_object('config')
+app.config.from_pyfile('config.py')
+
 
 @app.route('/')
 def dashboard():
@@ -31,5 +35,5 @@ def user_verify():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8080)
+    app.run(port=8080)
 
