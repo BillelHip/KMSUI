@@ -404,7 +404,7 @@
                   <input class="form-control">
                 </div>
                 <div class="form-group">
-                  <label>Health Informaton</label>
+                  <label>Health Information</label>
                   <div class="checkbox">
                     <label>
                       <input type="checkbox" value="">
