@@ -23,13 +23,21 @@ def login(user='teacher'):
         text['usertext'] = 'MyKidID'
         text['passwordtext'] = 'Parent IC No.'
 
-    return flask.render_template('login.html', login=text)
+    return flask.render_template('login.html', login=text, usertype=user)
 
 @app.route('/userverify', methods=['POST', 'GET'])
 def user_verify():
     req = flask.request.form
-    ret = {'success': True}
-    ret['text'] = req['username']+' '+req['password']
+    ret = {'success': False}
+    ret['text'] = 'Login fail!!'
+    if req['usertype']=='teacher':
+        user = database.teacher_authen(req['username'],req['password'])
+    else:
+        user = database.parent_authen(req['username'], req['password'])
+    if user:
+        ret['success'] = True
+        ret['text'] = 'Successful'
+
     return flask.jsonify(ret)
 
 

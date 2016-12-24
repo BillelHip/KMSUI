@@ -29,7 +29,7 @@ class DB:
 
     def teacher_authen(self,username, password):
         q = Query()
-        teacher = self.table_teacher((q.Username == username) & (q.Password == password))
+        teacher = self.table_teacher.search((q.Username == username) & (q.Password == password))
         ret = {}
         if len(teacher):
             ret = teacher
@@ -38,7 +38,7 @@ class DB:
 
     def parent_authen(self, mykidID, parentIC):
         q = Query()
-        parent = self.table_parent((q.StudentID == mykidID) & (q.ParentID == parentIC))
+        parent = self.table_parent.search((q.StudentID == mykidID) & (q.ParentID == parentIC))
         ret = {}
         if len(parent):
             ret = parent
