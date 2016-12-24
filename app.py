@@ -1,11 +1,12 @@
 import flask
-import tinydb
+import data
 
 app = flask.Flask(__name__, static_folder='./KMS', template_folder='./KMS/templates',
                   static_url_path='', instance_relative_config=True)
 app.config.from_object('config')
-app.config.from_pyfile('config.py')
+#app.config.from_pyfile('config.py')
 
+database = data.DB()
 
 @app.route('/')
 def dashboard():
@@ -28,7 +29,7 @@ def login(user='teacher'):
 def user_verify():
     req = flask.request.form
     ret = {'success': True}
-    ret.update({'text': req['username']+' '+req['password']})
+    ret['text'] = req['username']+' '+req['password']
     return flask.jsonify(ret)
 
 
