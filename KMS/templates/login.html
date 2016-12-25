@@ -48,11 +48,11 @@
                     <form role="form">
                         <fieldset>
                             <div class="form-group">
-                                <input id="username" class="form-control" placeholder="{{ login['usertext'] }}" name="username"
+                                <input id="username" class="form-control" placeholder="{{ data['usertext'] }}" name="username"
                                        type="text" autofocus>
                             </div>
                             <div class="form-group">
-                                <input id="password" class="form-control" placeholder="{{ login['passwordtext'] }}" name="password"
+                                <input id="password" class="form-control" placeholder="{{ data['passwordtext'] }}" name="password"
                                        type="password" value="">
                             </div>
                             <!--<div class="checkbox">
@@ -64,18 +64,28 @@
                             <div>
                                 <a onclick="loginclick()" class="btn btn-lg btn-success btn-block">Login</a>
                             </div>
+                            <br>
                             <div class="alert-danger" id="loginpanel" hidden align="center">
                                 <label id="logintext">
                                 </label>
                             </div>
-                            <div class="alert-success" align="center">
-                                <label><a href="{{ login['toggle_url'] }}">I'm a {{ login['who'] }}.</a>
-                                </label>
+                            <div>
+                                <pre>
+Notice:
+For Headteacher
+Username: admin Password: ADMIN
+
+For Parent
+MyKid No: 123456789000
+Parent IC No: 1234567890
+                                </pre>
                             </div>
-
-
                         </fieldset>
                     </form>
+                </div>
+                <div class="panel-footer" align="center">
+                    <label><a href="{{ data['toggle_url'] }}">I'm a {{ data['who'] }}.</a>
+                    </label>
                 </div>
             </div>
         </div>
@@ -104,7 +114,7 @@
     function loginclick() {
         var username = $('#username').val();
         var password = $('#password').val();
-        var usertype = '{{ usertype }}';
+        var usertype = '{{ data['usertype'] }}';
         $.ajax({
                     url: "{{ url_for('user_verify') }}",
                     method: "POST",
