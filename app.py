@@ -12,8 +12,18 @@ app.config.from_object('config')
 
 database = data.DB()
 
+def login_require(session):
+    if 'user' in session:
+        return False
+    else:
+        session.clear()
+        return True
+
 @app.route('/')
 def dashboard():
+    if login_require(session):
+        return redirect(url_for('login'))
+
     return flask.render_template('index.html')
 
 @app.route('/logout')
