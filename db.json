@@ -1,1 +1,44 @@
-{"_default": {}, "Teacher": {"1": {"Username": "admin", "HeadTeacher": true, "FullName": "Super Admin", "Password": "ADMIN", "ID": 0}}, "Parent": {}, "Student": {}}
+{
+  "_default": {},
+  "Teacher": {
+    "1": {
+      "Username": "admin",
+      "HeadTeacher": true,
+      "FullName": "Super Admin",
+      "Password": "ADMIN",
+      "ID": 0
+    }
+  },
+  "Parent": {
+    "1": {
+      "ParentID": "1234567890",
+      "FullName": "Nurhani Aleesya Binti Mohd Syakirin",
+      "DateofBirth": "10/0/1980",
+      "Gender": "F",
+      "Address": "Perlis",
+      "Race": "Malaysian",
+      "Nationality": "Malaysian",
+      "Relationship": "Father",
+      "Occupation": "",
+      "OfficeAddress": "",
+      "TelephoneNumber": "",
+      "OfficeTelephone": "",
+      "StudentID": "123456789000"
+    }
+  },
+  "Student": {
+    "1": {
+      "StudentID": "123456789000",
+      "FullName": "Nurhani Aleesya Binti Mohd Syakirin",
+      "DateofBirth": "10/0/2011",
+      "Gender": "F",
+      "Address": "Perlis",
+      "Race": "Malaysian",
+      "Nationality": "Malaysian",
+      "HealthInfoAllergy": false,
+      "HealthInfoDisease": false,
+      "HealthInfoDisability": false,
+      "DescriptionOfHealth": ""
+    }
+  }
+}

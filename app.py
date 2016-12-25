@@ -24,7 +24,17 @@ def dashboard():
     if login_require(session):
         return redirect(url_for('login'))
 
-    return flask.render_template('index.html')
+    headteacher=False
+    teacher=False
+    parent=False
+    if 'usertype' in session:
+        if session['usertype']=='teacher':
+            headteacher=True
+            teacher=True
+        else:
+            parent=True
+
+    return flask.render_template('index.html', headteacher=headteacher, teacher=teacher, parent=parent)
 
 @app.route('/logout')
 def logout():
@@ -38,10 +48,15 @@ def login(user='teacher'):
         return redirect(url_for('dashboard'))
     text = {'usertext': 'Username', 'passwordtext': 'Password'}
     if (user=='teacher'):
+        text['toggle_url'] = '/login/parent'
+        text['who'] = 'Parent'
         pass
     elif(user=='parent'):
-        text['usertext'] = 'MyKidID'
+        text['usertext'] = 'MyKid No.'
         text['passwordtext'] = 'Parent IC No.'
+        text['toggle_url'] = '/login'
+        text['who'] = 'Teacher'
+    session['usertype'] = user
 
     return flask.render_template('login.html', login=text, usertype=user)
 
@@ -52,8 +67,10 @@ def user_verify():
     ret['text'] = 'Login fail!!'
     if req['usertype']=='teacher':
         user = database.teacher_authen(req['username'],req['password'])
+        session['usertype'] = 'teacher'
     else:
         user = database.parent_authen(req['username'], req['password'])
+        session['usertype'] = 'parent'
     if user:
         session['user'] = user
         ret['success'] = True
