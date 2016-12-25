@@ -1,4 +1,8 @@
 import flask
+from flask import redirect
+from flask import session
+from flask import url_for
+
 import data
 
 app = flask.Flask(__name__, static_folder='./KMS', template_folder='./KMS/templates',
@@ -12,10 +16,16 @@ database = data.DB()
 def dashboard():
     return flask.render_template('index.html')
 
+@app.route('/logout')
+def logout():
+    session.clear()
+    return redirect(url_for('login'))
+
 @app.route('/login')
 @app.route('/login/<string:user>')
 def login(user='teacher'):
-    text = {}
+    if 'user' in session:
+        return redirect(url_for('dashboard'))
     text = {'usertext': 'Username', 'passwordtext': 'Password'}
     if (user=='teacher'):
         pass
@@ -35,11 +45,16 @@ def user_verify():
     else:
         user = database.parent_authen(req['username'], req['password'])
     if user:
+        session['user'] = user
         ret['success'] = True
         ret['text'] = 'Successful'
 
     return flask.jsonify(ret)
 
+#render for template testing
+@app.route('/render/<string:filename>')
+def render(filename='index.html'):
+    return flask.render_template(filename)
 
 
 if __name__ == '__main__':
