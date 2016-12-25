@@ -29,7 +29,7 @@
 <div class="wrap">
     <div class="fleft">
 
-        <iframe src="index.php" width="700" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+        <iframe src="index.html" width="700" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
 
 
     </div>

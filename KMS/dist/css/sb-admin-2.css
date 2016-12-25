@@ -4,8 +4,7 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 body {
-  background-color: #414345;
-  
+  background-color: #f8f8f8;
 }
 #wrapper {
   width: 100%;
@@ -14,6 +13,7 @@ body {
   padding: 0 15px;
   min-height: 568px;
   background-color: white;
+  
 }
 @media (min-width: 768px) {
   #page-wrapper {
@@ -79,7 +79,7 @@ body {
   border-bottom: 1px solid #e7e7e7;
 }
 .sidebar ul li a.active {
-  background-color: #bdc3c7;
+  background-color: #eeeeee;
 }
 .sidebar .arrow {
   float: right;
@@ -252,37 +252,6 @@ table.dataTable thead .sorting:after {
 .panel-green > a:hover {
   color: #3d8b3d;
 }
-/* my colors #859398 , #283048; */
-.panel-greenX {
-  border-color: #859398;
-}
-.panel-greenX > .panel-heading {
-  border-color: #859398;
-  color: white;
-  background-color: #859398;
-}
-.panel-greenX > a {
-  color: #859398;
-}
-.panel-greenX > a:hover {
-  color: #283048;
-}
-/*  */
-.panel-primaryX {
-  border-color: #2c3e50;
-}
-.panel-primaryX > .panel-heading {
-  border-color: #2c3e50;
-  color: white;
-  background-color: #2c3e50;
-}
-.panel-primaryX > a {
-  color: #2c3e50;
-}
-.panel-primaryX > a:hover {
-  color: #bdc3c7;
-}
-/*   */
 .panel-red {
   border-color: #d9534f;
 }

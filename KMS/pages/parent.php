@@ -307,7 +307,7 @@
                             <!-- /.nav-second-level -->
                         <!-- </li> -->
                         <li>
-                            <a href="ManageProfileParents.php"><i class="fa fa-user fa-fw"></i> Manage Profile</a>
+                            <a href="ManageProfileParents.html"><i class="fa fa-user fa-fw"></i> Manage Profile</a>
                         </li>
                         
                         <!--<li>

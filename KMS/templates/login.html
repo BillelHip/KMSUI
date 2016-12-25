@@ -48,13 +48,11 @@
                     <form role="form">
                         <fieldset>
                             <div class="form-group">
-                                <input id="username" class="form-control" placeholder="{{ login['usertext'] }}"
-                                       name="username"
+                                <input id="username" class="form-control" placeholder="{{ login['usertext'] }}" name="username"
                                        type="text" autofocus>
                             </div>
                             <div class="form-group">
-                                <input id="password" class="form-control" placeholder="{{ login['passwordtext'] }}"
-                                       name="password"
+                                <input id="password" class="form-control" placeholder="{{ login['passwordtext'] }}" name="password"
                                        type="password" value="">
                             </div>
                             <!--<div class="checkbox">
@@ -64,7 +62,7 @@
                             </div>-->
                             <!-- Change this to a button or input when using this as a form -->
                             <div>
-                                <a onclick="login_click()" class="btn btn-lg btn-success btn-block">Login</a>
+                                <a onclick="loginclick()" class="btn btn-lg btn-success btn-block">Login</a>
                             </div>
                             <div class="alert-danger" id="loginpanel" hidden align="center">
                                 <label id="logintext">
@@ -97,7 +95,7 @@
         $('#username').focus();
     }
 
-    function login_click() {
+    function loginclick() {
         var username = $('#username').val();
         var password = $('#password').val();
         var usertype = '{{ usertype }}';

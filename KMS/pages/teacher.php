@@ -307,10 +307,10 @@
                             <!-- /.nav-second-level -->
                         <!-- </li> -->
                         <li>
-                            <a href="ManageHomeworks.php"><i class="fa fa-pencil fa-fw"></i> Manage Homeworks</a>
+                            <a href="ManageHomeworks.html"><i class="fa fa-pencil fa-fw"></i> Manage Homeworks</a>
                         </li>
                         <li>
-                            <a href="ManageExaminations.php"><i class="fa  fa-pencil-square-o fa-fw"></i> Manage Examinations</a>
+                            <a href="ManageExaminations.html"><i class="fa  fa-pencil-square-o fa-fw"></i> Manage Examinations</a>
                         </li>
                         
                         <!--<li>
