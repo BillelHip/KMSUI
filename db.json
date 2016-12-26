@@ -57,7 +57,8 @@
       "HealthInfoAllergy": true,
       "HealthInfoDisease": false,
       "HealthInfoDisability": false,
-      "DescriptionOfHealth": ""
+      "DescriptionOfHealth": "",
+      "Package":"A"
     }
   }
 }
