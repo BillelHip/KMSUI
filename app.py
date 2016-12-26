@@ -170,12 +170,12 @@ def event_list_html():
         html = html + '<div class=\"form-group\"><label>Subject</label><p class=\"form-control-static\"></p>'+ i['Subject'] +'</div>'
         html = html + '<div class=\"form-group\"><label>Date</label><p class=\"form-control-static\"></p>'+ i['Date'] +'</div>'
         html = html + '<div class=\"form-group\"><label>'
-        if i['Year1']:
-            html = html + 'Year1 '
-        if i['Year2']:
-            html = html + 'Year2 '
-        if i['Year3']:
-            html = html + 'Year3'
+        if i['Year4']:
+            html = html + 'Year4 '
+        if i['Year5']:
+            html = html + 'Year5 '
+        if i['Year6']:
+            html = html + 'Year6'
 
         html = html + '</label></div>'
 
