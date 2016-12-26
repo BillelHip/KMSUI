@@ -113,6 +113,7 @@ def student_profile_create():
 
     return flask.jsonify(ret)
 
+
 @app.route('/event')
 def event():
     if login_require(session):
@@ -123,6 +124,54 @@ def event():
         data = {}
 
     return flask.render_template('ManageEvents.html', data=data)
+
+@app.route('/event/json')
+def event_json():
+    #if login_require(session):
+    #    return redirect(url_for('login'))
+    ret=database.get_events()
+
+    return flask.jsonify(ret)
+
+
+@app.route('/event/list/html')
+def event_list_html():
+    #if login_require(session):
+    #    return redirect(url_for('login'))
+    event=database.get_events()
+    html = ''
+    for i in event:
+        html = html + '<div class=\"panel panel-default\"><div class=\"panel-heading\">Events</div><div class=\"panel-body\">'
+        html = html + '<div class=\"form-group\"><label>Subject</label><p class=\"form-control-static\"></p>'+ i['Subject'] +'</div>'
+        html = html + '<div class=\"form-group\"><label>Date</label><p class=\"form-control-static\"></p>'+ i['Date'] +'</div>'
+        html = html + '<div class=\"form-group\"><label>'
+        if i['Year1']:
+            html = html + 'Year1 '
+        if i['Year2']:
+            html = html + 'Year2 '
+        if i['Year3']:
+            html = html + 'Year3'
+
+        html = html + '</label></div>'
+
+        html = html + '<div class=\"form-group\"><label>Description</label><p class=\"form-control-static\"></p>'+ i['Description'] +'</div>'
+
+        html = html + '</div></div>'
+
+    return html
+
+
+@app.route('/course')
+def course():
+    if login_require(session):
+        return redirect(url_for('login'))
+    if 'data' in session:
+        data = session['data']
+    else:
+        data = {}
+
+    return flask.render_template('ManageCourses.html', data=data)
+
 
 #render for template testing
 @app.route('/render/<string:filename>')
