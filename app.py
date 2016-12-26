@@ -91,11 +91,27 @@ def user_verify():
 
 @app.route('/student/profile')
 def student_profile():
-    data = {}
+    if login_require(session):
+        return redirect(url_for('login'))
     if 'data' in session:
         data = session['data']
+    else:
+        data = {}
 
     return flask.render_template('Createstudentprofile.html', data=data)
+
+
+@app.route('/student/profile/create', methods=['POST'])
+def student_profile_create():
+    ret = {'success': False}
+
+    if login_require(session):
+        ret = {'text': 'Login require'}
+        return flask.jsonify(ret)
+
+    req = flask.request.form
+
+    return flask.jsonify(ret)
 
 
 #render for template testing
