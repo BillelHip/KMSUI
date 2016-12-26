@@ -113,6 +113,16 @@ def student_profile_create():
 
     return flask.jsonify(ret)
 
+@app.route('/event')
+def event():
+    if login_require(session):
+        return redirect(url_for('login'))
+    if 'data' in session:
+        data = session['data']
+    else:
+        data = {}
+
+    return flask.render_template('ManageEvents.html', data=data)
 
 #render for template testing
 @app.route('/render/<string:filename>')
