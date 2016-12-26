@@ -30,7 +30,9 @@ def dashboard():
 
     if 'usertype' in session:
         if session['usertype']=='teacher':
-            data['headteacher'] = data['teacher'] = True
+            data['teacher'] = True
+            if 'user' in session:
+                data['headteacher'] = session['user'][0]['HeadTeacher']
         else:
             data['parent']=True
 

@@ -9,7 +9,7 @@ class DB:
 
     def __init__(self):
         q = Query()
-        teacher = self.table_teacher.search(q.ID==0)
+        teacher = self.table_teacher.search(q.TeacherID==0)
         if len(teacher)==0:
             self.table_teacher.insert({
                 'ID': 0,

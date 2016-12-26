@@ -2,17 +2,36 @@
   "_default": {},
   "Teacher": {
     "1": {
+      "ICNo": "0",
       "Username": "admin",
       "HeadTeacher": true,
       "FullName": "Super Admin",
+      "Gender": "M",
+      "Married": false,
       "Password": "ADMIN",
-      "ID": 0
+      "DateofBirth": "01/01/1977",
+      "Address": "Sintok Kedah",
+      "ContactNo": "+601234567890",
+      "TeacherID": 0
+    },
+    "2": {
+      "ICNo": "1234567890",
+      "Username": "teacher",
+      "HeadTeacher": false,
+      "FullName": "Testing Teacher",
+      "Gender": "M",
+      "Married": true,
+      "Password": "teacher",
+      "DateofBirth": "01/01/1977",
+      "Address": "Sintok Kedah",
+      "ContactNo": "+601234567890",
+      "TeacherID": 2
     }
   },
   "Parent": {
     "1": {
       "ParentID": "1234567890",
-      "FullName": "Nurhani Aleesya Binti Mohd Syakirin",
+      "FullName": "Testing Father",
       "DateofBirth": "10/0/1980",
       "Gender": "F",
       "Address": "Perlis",
@@ -29,13 +48,13 @@
   "Student": {
     "1": {
       "StudentID": "123456789000",
-      "FullName": "Nurhani Aleesya Binti Mohd Syakirin",
+      "FullName": "Testing Student",
       "DateofBirth": "10/0/2011",
       "Gender": "F",
       "Address": "Perlis",
       "Race": "Malaysian",
       "Nationality": "Malaysian",
-      "HealthInfoAllergy": false,
+      "HealthInfoAllergy": true,
       "HealthInfoDisease": false,
       "HealthInfoDisability": false,
       "DescriptionOfHealth": ""
