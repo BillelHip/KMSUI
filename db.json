@@ -1,64 +1,84 @@
 {
   "_default": {},
-  "Teacher": {
+  "Event": {
     "1": {
-      "ICNo": "0",
-      "Username": "admin",
-      "HeadTeacher": true,
-      "FullName": "Super Admin",
-      "Gender": "M",
-      "Married": false,
-      "Password": "ADMIN",
-      "DateofBirth": "01/01/1977",
-      "Address": "Sintok Kedah",
-      "ContactNo": "+601234567890",
-      "TeacherID": 0
+      "EventID": 1,
+      "Subject": "Happy New Year",
+      "Date": "01/01/2017",
+      "Description": "New year celebrate",
+      "Year1": true,
+      "Year2": true,
+      "Year3": true
     },
     "2": {
-      "ICNo": "1234567890",
-      "Username": "teacher",
-      "HeadTeacher": false,
-      "FullName": "Testing Teacher",
+      "EventID": 2,
+      "Subject": "Christmas",
+      "Date": "25/12/2016",
+      "Description": "Christmas party",
+      "Year1": true,
+      "Year2": true,
+      "Year3": true
+    }
+  },
+  "Teacher": {
+    "1": {
+      "Username": "admin",
+      "HeadTeacher": true,
       "Gender": "M",
-      "Married": true,
-      "Password": "teacher",
+      "Married": false,
+      "ContactNo": "+601234567890",
       "DateofBirth": "01/01/1977",
       "Address": "Sintok Kedah",
+      "TeacherID": 0,
+      "ICNo": "0",
+      "FullName": "Super Admin",
+      "Password": "ADMIN"
+    },
+    "2": {
+      "Username": "teacher",
+      "HeadTeacher": false,
+      "Gender": "M",
+      "Married": true,
       "ContactNo": "+601234567890",
-      "TeacherID": 2
+      "DateofBirth": "01/01/1977",
+      "Address": "Sintok Kedah",
+      "TeacherID": 2,
+      "ICNo": "1234567890",
+      "FullName": "Testing Teacher",
+      "Password": "teacher"
     }
   },
   "Parent": {
     "1": {
-      "ParentID": "1234567890",
-      "FullName": "Testing Father",
-      "DateofBirth": "10/0/1980",
-      "Gender": "F",
-      "Address": "Perlis",
-      "Race": "Malaysian",
-      "Nationality": "Malaysian",
-      "Relationship": "Father",
-      "Occupation": "",
-      "OfficeAddress": "",
       "TelephoneNumber": "",
       "OfficeTelephone": "",
-      "StudentID": "123456789000"
+      "Relationship": "Father",
+      "Gender": "F",
+      "ParentID": "1234567890",
+      "StudentID": "123456789000",
+      "DateofBirth": "10/0/1980",
+      "Race": "Malaysian",
+      "Address": "Perlis",
+      "Nationality": "Malaysian",
+      "FullName": "Testing Father",
+      "OfficeAddress": "",
+      "Occupation": ""
     }
   },
   "Student": {
     "1": {
       "StudentID": "123456789000",
-      "FullName": "Testing Student",
-      "DateofBirth": "10/0/2011",
-      "Gender": "F",
-      "Address": "Perlis",
-      "Race": "Malaysian",
-      "Nationality": "Malaysian",
-      "HealthInfoAllergy": true,
       "HealthInfoDisease": false,
+      "Gender": "F",
+      "Package": "A",
+      "DateofBirth": "10/0/2011",
+      "Race": "Malaysian",
       "HealthInfoDisability": false,
-      "DescriptionOfHealth": "",
-      "Package":"A"
+      "Address": "Perlis",
+      "Nationality": "Malaysian",
+      "FullName": "Testing Student",
+      "HealthInfoAllergy": true,
+      "DescriptionOfHealth": ""
     }
   }
 }

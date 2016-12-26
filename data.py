@@ -6,6 +6,7 @@ class DB:
     table_teacher = db.table('Teacher')
     table_parent = db.table('Parent')
     table_student = db.table('Student')
+    table_event = db.table('Event')
 
     def __init__(self):
         q = Query()
@@ -44,6 +45,9 @@ class DB:
             ret = parent
 
         return ret
+
+    def get_events(self):
+        return self.table_event.all()
 
 
 
