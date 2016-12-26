@@ -38,7 +38,7 @@ def dashboard():
                 data['parent']=True
         session['data'] = data
     else:
-        data = session['data'][0]
+        data = session['data']
 
     return flask.render_template('index.html', data=data)
 
