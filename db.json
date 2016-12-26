@@ -1,1 +1,65 @@
-{"_default": {}, "Event": {}, "Teacher": {"1": {"Username": "admin", "HeadTeacher": true, "Gender": "M", "Married": false, "ContactNo": "+601234567890", "DateofBirth": "01/01/1977", "Address": "Sintok Kedah", "TeacherID": 0, "ICNo": "0", "FullName": "Super Admin", "Password": "ADMIN"}, "2": {"Username": "teacher", "HeadTeacher": false, "Gender": "M", "Married": true, "ContactNo": "+601234567890", "DateofBirth": "01/01/1977", "Address": "Sintok Kedah", "TeacherID": 2, "ICNo": "1234567890", "FullName": "Testing Teacher", "Password": "teacher"}}, "Parent": {"1": {"TelephoneNumber": "", "OfficeTelephone": "", "Relationship": "Father", "Gender": "F", "ParentID": "1234567890", "StudentID": "123456789000", "DateofBirth": "10/0/1980", "Race": "Malaysian", "Address": "Perlis", "Nationality": "Malaysian", "FullName": "Testing Father", "OfficeAddress": "", "Occupation": ""}}, "Student": {"1": {"StudentID": "123456789000", "HealthInfoDisease": false, "Gender": "F", "Package": "A", "DateofBirth": "10/0/2011", "Race": "Malaysian", "HealthInfoDisability": false, "Address": "Perlis", "Nationality": "Malaysian", "FullName": "Testing Student", "HealthInfoAllergy": true, "DescriptionOfHealth": ""}}}
+{
+  "_default": {},
+  "Event": {},
+  "Teacher": {
+    "1": {
+      "Username": "admin",
+      "HeadTeacher": true,
+      "Gender": "M",
+      "Married": false,
+      "ContactNo": "+601234567890",
+      "DateofBirth": "01/01/1977",
+      "Address": "Sintok Kedah",
+      "TeacherID": 0,
+      "ICNo": "0",
+      "FullName": "Super Admin",
+      "Password": "ADMIN"
+    },
+    "2": {
+      "Username": "teacher",
+      "HeadTeacher": false,
+      "Gender": "M",
+      "Married": true,
+      "ContactNo": "+601234567890",
+      "DateofBirth": "01/01/1977",
+      "Address": "Sintok Kedah",
+      "TeacherID": 2,
+      "ICNo": "1234567890",
+      "FullName": "Testing Teacher",
+      "Password": "teacher"
+    }
+  },
+  "Parent": {
+    "1": {
+      "TelephoneNumber": "",
+      "OfficeTelephone": "",
+      "Relationship": "Father",
+      "Gender": "F",
+      "ParentID": "1234567890",
+      "StudentID": "123456789000",
+      "DateofBirth": "10/0/1980",
+      "Race": "Malaysian",
+      "Address": "Perlis",
+      "Nationality": "Malaysian",
+      "FullName": "Testing Father",
+      "OfficeAddress": "",
+      "Occupation": ""
+    }
+  },
+  "Student": {
+    "1": {
+      "StudentID": "123456789000",
+      "HealthInfoDisease": false,
+      "Gender": "F",
+      "Package": "A",
+      "DateofBirth": "10/0/2011",
+      "Race": "Malaysian",
+      "HealthInfoDisability": false,
+      "Address": "Perlis",
+      "Nationality": "Malaysian",
+      "FullName": "Testing Student",
+      "HealthInfoAllergy": true,
+      "DescriptionOfHealth": ""
+    }
+  }
+}
