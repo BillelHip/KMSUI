@@ -25,16 +25,20 @@ def dashboard():
     if login_require(session):
         return redirect(url_for('login'))
 
-    data = {}
-    data['headteacher'] = data['teacher'] = data['parent'] =False
+    if not 'data' in session:
+        data = {}
+        data['headteacher'] = data['teacher'] = data['parent'] =False
 
-    if 'usertype' in session:
-        if session['usertype']=='teacher':
-            data['teacher'] = True
-            if 'user' in session:
-                data['headteacher'] = session['user'][0]['HeadTeacher']
-        else:
-            data['parent']=True
+        if 'usertype' in session:
+            if session['usertype']=='teacher':
+                data['teacher'] = True
+                if 'user' in session:
+                    data['headteacher'] = session['user'][0]['HeadTeacher']
+            else:
+                data['parent']=True
+        session['data'] = data
+    else:
+        data = session['data'][0]
 
     return flask.render_template('index.html', data=data)
 
@@ -83,6 +87,15 @@ def user_verify():
         ret['text'] = 'Successful'
 
     return flask.jsonify(ret)
+
+
+@app.route('/student/profile')
+def student_profile():
+    data = {}
+    if 'data' in session:
+        data = session['data']
+
+    return flask.render_template('Createstudentprofile.html', data=data)
 
 
 #render for template testing
