@@ -1,24 +1,25 @@
 {
+  "Student": {},
   "_default": {},
   "Event": {
     "1": {
       "EventID": 1,
-      "Subject": "Happy New Year",
-      "Date": "01/01/2017",
       "Description": "New year celebrate",
       "Year1": true,
       "Year2": true,
-      "Year3": true
+      "Year3": true,
+      "Date": "01/01/2017",
+      "Subject": "Happy New Year"
     },
     "2": {
       "EventID": 2,
-      "Subject": "Christmas",
-      "Date": "25/12/2016",
       "Description": "Christmas party",
       "Year1": true,
       "Year2": true,
-      "Year3": true
-    },
+      "Year3": true,
+      "Date": "25/12/2016",
+      "Subject": "Christmas"
+    }},
     "Teacher": {
       "1": {
         "Username": "admin",
@@ -50,11 +51,11 @@
     "Parent": {
       "1": {
         "TelephoneNumber": "",
-        "OfficeTelephone": "",
-        "Relationship": "Father",
-        "Gender": "F",
         "ParentID": "1234567890",
         "StudentID": "123456789000",
+        "Relationship": "Father",
+        "Gender": "F",
+        "OfficeTelephone": "",
         "DateofBirth": "10/0/1980",
         "Race": "Malaysian",
         "Address": "Perlis",
@@ -80,5 +81,4 @@
         "DescriptionOfHealth": ""
       }
     }
-  }
 }
