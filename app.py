@@ -134,6 +134,31 @@ def event_json():
     return flask.jsonify(ret)
 
 
+@app.route('/event/add', methods=['POST', 'GET'])
+def event_add():
+    req = flask.request.form
+    ret = {'success': False}
+    #ret['text'] = 'Update fail!!'
+    subject = date = description = ''
+    year1 = year2 = year3 = False
+    if 'Subject' in req:
+        subject = req['Subject']
+    if 'Date' in req:
+        date = req['Date']
+    if 'Description' in req:
+        description = req['Description']
+    if 'Year4' in req:
+        year4 = True
+    if 'Year5' in req:
+        year5 = True
+    if 'Year6' in req:
+        year6 = True
+
+    ret['success'] = database.add_events(subject,date,description,year4,year5,year6)
+
+    return flask.jsonify(ret)
+
+
 @app.route('/event/list/html')
 def event_list_html():
     #if login_require(session):
@@ -173,10 +198,16 @@ def course():
     return flask.render_template('ManageCourses.html', data=data)
 
 
+
 #render for template testing
+@app.route('/<string:filename>')
 @app.route('/render/<string:filename>')
 def render(filename='index.html'):
-    return flask.render_template(filename)
+    if 'data' in session:
+        data = session['data']
+    else:
+        data = {}
+    return flask.render_template(filename, data=data)
 
 
 if __name__ == '__main__':

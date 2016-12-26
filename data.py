@@ -49,5 +49,20 @@ class DB:
     def get_events(self):
         return self.table_event.all()
 
+    def add_events(self, subject, date, description, year4, year5, year6):
+        id = len(self.table_event.all())+1
+        self.table_event.insert(
+            {
+                "EventID": id,
+                "Description": description,
+                "Year4": year4,
+                "Year5": year5,
+                "Year6": year6,
+                "Date": date,
+                "Subject": subject
+            }
+        )
+        return True
+
 
 

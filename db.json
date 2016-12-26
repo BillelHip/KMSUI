@@ -1,84 +1,93 @@
 {
-  "Student": {},
+  "Student": {
+    "1": {
+      "StudentID": "123456789000",
+      "HealthInfoDisease": false,
+      "Gender": "F",
+      "Package": "A",
+      "DateofBirth": "10/0/2011",
+      "Race": "Malaysian",
+      "HealthInfoDisability": false,
+      "Address": "Perlis",
+      "Nationality": "Malaysian",
+      "FullName": "Testing Student",
+      "HealthInfoAllergy": true,
+      "DescriptionOfHealth": ""
+    }
+  },
   "_default": {},
+  "Teacher": {
+    "1": {
+      "Username": "admin",
+      "HeadTeacher": true,
+      "Gender": "M",
+      "Married": false,
+      "ContactNo": "+601234567890",
+      "DateofBirth": "01/01/1977",
+      "Address": "Sintok Kedah",
+      "TeacherID": 0,
+      "ICNo": "0",
+      "FullName": "Super Admin",
+      "Password": "ADMIN"
+    },
+    "2": {
+      "Username": "teacher",
+      "HeadTeacher": false,
+      "Gender": "M",
+      "Married": true,
+      "ContactNo": "+601234567890",
+      "DateofBirth": "01/01/1977",
+      "Address": "Sintok Kedah",
+      "TeacherID": 2,
+      "ICNo": "1234567890",
+      "FullName": "Testing Teacher",
+      "Password": "teacher"
+    }
+  },
+  "Parent": {
+    "1": {
+      "TelephoneNumber": "",
+      "ParentID": "1234567890",
+      "StudentID": "123456789000",
+      "Relationship": "Father",
+      "Gender": "F",
+      "OfficeTelephone": "",
+      "DateofBirth": "10/0/1980",
+      "Race": "Malaysian",
+      "Address": "Perlis",
+      "Nationality": "Malaysian",
+      "FullName": "Testing Father",
+      "OfficeAddress": "",
+      "Occupation": ""
+    }
+  },
   "Event": {
     "1": {
       "EventID": 1,
-      "Description": "New year celebrate",
-      "Year1": true,
-      "Year2": true,
-      "Year3": true,
       "Date": "01/01/2017",
+      "Description": "New year celebrate",
+      "Year4": true,
+      "Year5": true,
+      "Year6": true,
       "Subject": "Happy New Year"
     },
     "2": {
       "EventID": 2,
-      "Description": "Christmas party",
-      "Year1": true,
-      "Year2": true,
-      "Year3": true,
       "Date": "25/12/2016",
+      "Description": "Christmas party",
+      "Year4": true,
+      "Year5": true,
+      "Year6": true,
       "Subject": "Christmas"
-    }},
-    "Teacher": {
-      "1": {
-        "Username": "admin",
-        "HeadTeacher": true,
-        "Gender": "M",
-        "Married": false,
-        "ContactNo": "+601234567890",
-        "DateofBirth": "01/01/1977",
-        "Address": "Sintok Kedah",
-        "TeacherID": 0,
-        "ICNo": "0",
-        "FullName": "Super Admin",
-        "Password": "ADMIN"
-      },
-      "2": {
-        "Username": "teacher",
-        "HeadTeacher": false,
-        "Gender": "M",
-        "Married": true,
-        "ContactNo": "+601234567890",
-        "DateofBirth": "01/01/1977",
-        "Address": "Sintok Kedah",
-        "TeacherID": 2,
-        "ICNo": "1234567890",
-        "FullName": "Testing Teacher",
-        "Password": "teacher"
-      }
     },
-    "Parent": {
-      "1": {
-        "TelephoneNumber": "",
-        "ParentID": "1234567890",
-        "StudentID": "123456789000",
-        "Relationship": "Father",
-        "Gender": "F",
-        "OfficeTelephone": "",
-        "DateofBirth": "10/0/1980",
-        "Race": "Malaysian",
-        "Address": "Perlis",
-        "Nationality": "Malaysian",
-        "FullName": "Testing Father",
-        "OfficeAddress": "",
-        "Occupation": ""
-      }
-    },
-    "Student": {
-      "1": {
-        "StudentID": "123456789000",
-        "HealthInfoDisease": false,
-        "Gender": "F",
-        "Package": "A",
-        "DateofBirth": "10/0/2011",
-        "Race": "Malaysian",
-        "HealthInfoDisability": false,
-        "Address": "Perlis",
-        "Nationality": "Malaysian",
-        "FullName": "Testing Student",
-        "HealthInfoAllergy": true,
-        "DescriptionOfHealth": ""
-      }
+    "3": {
+      "EventID": 3,
+      "Date": "15/02/2017",
+      "Description": "For Chinese people to celebrate",
+      "Year4": true,
+      "Year5": true,
+      "Year6": true,
+      "Subject": "Chinese New Year"
     }
+  }
 }

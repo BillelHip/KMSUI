@@ -62,30 +62,28 @@
         <div class="navbar-default sidebar" role="navigation">
             <div class="sidebar-nav navbar-collapse">
                 <ul class="nav" id="side-menu">
-                    <li><a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard of Kindergarten</a></li>
-                    <!-- </li> -->
                     <li><a href="/"><i class="fa fa-dashboard fa-fw"></i> Dashboard of Kindergarten</a></li>
                     {% if data['headteacher'] %}
-                    <li><a href="/student/profile"><i class="fa fa-child fa-fw"></i> Create Student
-                        Profile</a></li>
-                    <li><a href="/Createteacherprofile.html"><i class="fa fa-group fa-fw"></i> Create Teacher
-                        Profile</a></li>
-                    <li><a href="/ManagePayment.html"><i class="fa fa-money fa-fw"></i> Manage Payment</a></li>
-                    <li><a href="/ManageCourses.html"><i class="fa fa-book fa-fw"></i> Manage Courses</a></li>
-                    <li><a href="/event"><i class="fa fa-fort-awesome fa-fw"></i> Manage Events</a>
-                    </li>
+                        <li><a href="/student/profile"><i class="fa fa-child fa-fw"></i> Create Student
+                            Profile</a></li>
+                        <li><a href="/Createteacherprofile.html"><i class="fa fa-group fa-fw"></i> Create Teacher
+                            Profile</a></li>
+                        <li><a href="/ManagePayment.html"><i class="fa fa-money fa-fw"></i> Manage Payment</a></li>
+                        <li><a href="/ManageCourses.html"><i class="fa fa-book fa-fw"></i> Manage Courses</a></li>
+                        <li><a href="/event"><i class="fa fa-fort-awesome fa-fw"></i> Manage Events</a>
+                        </li>
                     {% endif %}
                     {% if data['teacher'] %}
-                    <li><a href="/ManageHomeworks.html"><i class="fa fa-pencil fa-fw"></i> Manage Homeworks</a>
-                    </li>
-                    <li><a href="/ManageExaminations.html"><i class="fa  fa-pencil-square-o fa-fw"></i> Manage
-                        Examinations</a></li>
-                    <li><a href="/ManageProfileTeacher.html"><i class="fa fa-user fa-fw"></i> Manage Profile</a>
-                    </li>
+                        <li><a href="/ManageHomeworks.html"><i class="fa fa-pencil fa-fw"></i> Manage Homeworks</a>
+                        </li>
+                        <li><a href="/ManageExaminations.html"><i class="fa  fa-pencil-square-o fa-fw"></i> Manage
+                            Examinations</a></li>
+                        <li><a href="/ManageProfileTeacher.html"><i class="fa fa-user fa-fw"></i> Manage Profile</a>
+                        </li>
                     {% endif %}
                     {% if data['parent'] %}
-                    <li><a href="/ManageProfileParents.html"><i class="fa fa-user fa-fw"></i> Manage Profile</a>
-                    </li>
+                        <li><a href="/ManageProfileParents.html"><i class="fa fa-user fa-fw"></i> Manage Profile</a>
+                        </li>
                     {% endif %}
 
                 </ul>
@@ -109,16 +107,16 @@
                         <div class="row">
                             <div class="col-lg-6">
 
-                                <form role="form">
+                                <form id="event_form">
                                     <div class="form-group">
                                         <label>Subject</label>
-                                        <input class="form-control">
+                                        <input name="Subject" class="form-control">
                                     </div>
                                     <label>Event Time and date</label>
                                     <div class="form-group">
                                         <div class="form-group">
                                             <div class='input-group date' id='datetimepicker1'>
-                                                <input type='text' class="form-control"/>
+                                                <input name="Date" type='text' class="form-control"/>
                                                 <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-calendar"></span>
                                             </span>
@@ -129,36 +127,30 @@
                                         <label>Years</label>
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" value="">
+                                                <input name="Year4" type="checkbox" value="">
                                                 Year 4 </label>
                                         </div>
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" value="">
+                                                <input name="Year5" type="checkbox" value="">
                                                 Year 5 </label>
                                         </div>
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" value="">
+                                                <input name="Year6" type="checkbox" value="">
                                                 Year 6 </label>
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <textarea name="Description" class="form-control" rows="3"></textarea>
+                                    </div>
+                                    <button type="button" onclick="btn_click()" class="btn btn-default">Submit
+                                    </button>
+                                    <button type="reset" class="btn btn-default">Cancel</button>
 
                                 </form>
                             </div>
-                            <!-- /.col-lg-6 (nested) -->
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label>Description</label>
-                                    <textarea class="form-control" rows="3"></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-default">Submit</button>
-                                <button type="reset" class="btn btn-default">Cancel</button>
-                            </div>
-
-
-
-                            <!-- /.col-lg-6 (nested) -->
                         </div>
                         <!-- /.row (nested) -->
                     </div>
@@ -201,11 +193,49 @@
 
 <script>
     $(document).ready(function () {
-        $('#dataTables-example').DataTable({
-            responsive: true
+        $('#datetimepicker1').datetimepicker({
+            viewMode: 'years',
+            format: 'DD/MM/YYYY'
         });
-        $('#datetimepicker1').datetimepicker();
     });
+
+    $.fn.serializeObject = function () {
+        var o = {};
+        var a = this.serializeArray();
+        $.each(a, function () {
+            if (o[this.name] !== undefined) {
+                if (!o[this.name].push) {
+                    o[this.name] = [o[this.name]];
+                }
+                o[this.name].push(this.value || '');
+            } else {
+                o[this.name] = this.value || '';
+            }
+        });
+        return o;
+    };
+
+    function btn_click() {
+        var url = "/event/add";
+
+        var data = $('#event_form').serializeObject();
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: data,
+            datatype: "json",
+            success: function (data) {
+                console.log(data);
+                if (data.success) {
+                    alert('Event added');
+                    window.location = "/event"
+                }
+                //alert(data);
+            }
+        });
+    }
+
 </script>
 </body>
 </html>
