@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Kindergarten</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+<div id="wrapper">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="usermanual.html">USER MANUAL</a>
+        </div>
+
+
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li>
+                        <a href="usermanual.html"><i class="fa fa-dashboard fa-fw"></i> Server </a>
+                    </li>
+                    <li>
+                        <a href="um_webapp.html"><i class="fa fa-laptop fa-fw"></i> Web Application</a>
+                    </li>
+                    <li>
+                        <a href="um_mobile.html"><i class="fa  fa-mobile fa-fw"></i> Mobile Application </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.sidebar-collapse -->
+        </div>
+        <!-- /.navbar-static-side -->
+    </nav>
+
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Server Side </h1>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            What we need for server side ?
+                        </div>
+                        <div class="panel-body">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label>Introduction</label>
+                                <p class="form-control-static">
+                                    This user manual will walk you through setting up a server with Apache2 and Python, sans the help of a framework. By the end of this tutorial, you will be fully capable of launching a Kindergarten Management Software(KMS).
+                                </p>
+                            </div>
+                            <div class="form-group">
+                                <label>Prerequisites</label>
+                                <p class="form-control-static">
+                                    To follow this tutorial, you will need:
+                                    One Ubuntu server
+                                </p>
+                            </div>
+                            <div class="form-group">
+                                <label>Step 1 — Making Python the Default</label>
+                                <p class="form-control-static">
+                                    In this step, we will set Python as the default for our python command.
+                                    First, check your current Python version.
+                                    <div class="panel-body">
+                                        <pre>$ python --version</pre>
+                                    </div>
+                                </p>
+                                <p class="form-control-static">
+                                    We would like to have python run Python 3. So first, let's remove the old 2.7 binary.
+                                    <div class="panel-body">
+                                        <pre>$ sudo rm /usr/bin/python</pre>
+                                    </div>
+                                </p>
+                                <p class="form-control-static">
+                                    Next, create a symbolic link to the Python 3 binary in its place.
+                                    <div class="panel-body">
+                                        <pre>$ sudo ln -s /usr/bin/python3 /usr/bin/python</pre>
+                                    </div>
+                                </p>
+                            </div>
+                            <div class="form-group">
+                                <label>Step 2 — Installing Pip</label>
+                                <p class="form-control-static">
+                                    In this section, we will install Pip, the recommended package installer for Python.
+                                    First, update the system's package index. This will ensure that old or outdated packages do not interfere with the installation.
+                                <div class="panel-body">
+                                    <pre>$ sudo apt-get update</pre>
+                                </div>
+                                </p>
+                                <p class="form-control-static">
+                                    Pip allows us to easily manage any Python 3 package we would like to have. To install it, simply run the following:
+                                <div class="panel-body">
+                                    <pre>$ sudo apt-get install python3-pip</pre>
+                                </div>
+                                </p>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Step 3 — Installing Apache 2</label>
+                                <p class="form-control-static">
+                                    In this section, we will install Apache 2, and ensure that it recognizes Python files as executables.
+
+                                    Install Apache using apt-get:
+                                    <div class="panel-body">
+                                        <pre>$ sudo apt-get install apache2</pre>
+                                    </div>
+                                </p>
+                                <p class="form-control-static">
+                                    We want to place our website's root directory in a safe location. The server is by default at /var/www/html. To keep convention, we will create a new directory for testing purposes, called test, in the same location.                                <p class="panel-body">
+
+                                <div class="panel-body">
+                                    <pre>$ sudo mkdir /var/www/test</pre>
+                                </div>
+                                </p>
+                                <p class="form-control-static">
+                                    Finally, we must register Python with Apache. To start, we disable multithreading processes.
+                                    <div class="panel-body">
+                                        <pre>$ sudo a2dismod mpm_event</pre>
+                                    </div>
+                                </p>
+
+                                <p class="form-control-static">
+                                    Then, we give Apache explicit permission to run scripts.
+                                    <div class="panel-body">
+                                        <pre>$ sudo a2enmod mpm_prefork cgi</pre>
+                                    </div>
+                                </p>
+
+                                <p class="form-control-static">
+                                    Next, we modify the actual Apache configuration, to explicitly declare Python files as runnable file and allow such executables. Open the configuration file using nano or your favorite text editor.
+                                    <div class="panel-body">
+                                        <pre>$ sudo nano /etc/apache2/sites-enabled/000-default.conf</pre>
+                                    </div>
+                                </p>
+
+
+                                <p class="form-control-static">
+                                    Add the following right after the first line, which reads <code>&lt;VirtualHost *:80\&gt;</code> .
+                                <div class="panel-body">
+<pre>
+<code>&lt;Directory /var/www/test&gt;
+    Options +ExecCGI
+    DirectoryIndex index.py
+&lt;/Directory&gt;
+AddHandler cgi-script .py
+</code>
+</pre>
+                                </div>
+                                Make sure that your <code>&lt;Directory&gt;</code> block is nested inside the <code>&lt;VirtualHost&gt;</code> block, like so. Make sure to indent correctly with tabs, too.
+                                </p>
+
+                                <p class="form-control-static">
+                                    Save and exit the file. To put these changes into effect, restart Apache.                                    <div class="panel-body">
+                                        <pre>$ sudo service apache2 restart</pre>
+                                    </div>
+                                </p>
+
+
+                            </div>
+
+
+
+                        </div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+</div>
+<!-- /#page-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- jQuery -->
+<script src="../vendor/jquery/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="../vendor/metisMenu/metisMenu.min.js"></script>
+
+<!-- Morris Charts JavaScript -->
+<script src="../vendor/raphael/raphael.min.js"></script>
+<script src="../vendor/morrisjs/morris.min.js"></script>
+<script src="../data/morris-data.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="../dist/js/sb-admin-2.js"></script>
+
+</body>
+
+</html>
